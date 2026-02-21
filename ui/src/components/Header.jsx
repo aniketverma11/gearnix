@@ -1,23 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
-const productItems = [
-    'Cat6 Cable', 'Cat6a Cable', 'Cat7 Cable', 'Cat8 Cable',
-    'Fiber Optic Cable', 'Audio Cable', 'Speaker Cable', 'Laptops',
-    'Desktops', 'Network Cabinets', 'PDU', 'Routers',
-    'Network Switches', 'IP Phones', 'IP PBX', 'Media Convertors',
-];
-
-const brandItems = [
-    'Cisco', 'HP', 'Dell', 'Fortinet', 'Hikvision', 'APC',
-    'Aruba', 'Belden', 'Mikrotik', 'Ubiquiti', 'Synology',
-    'Qnap', 'Yealink', 'TP-Link', 'D-Link', 'SonicWALL',
-];
-
 function Header() {
     const [scrolled, setScrolled] = useState(false);
     const [menuOpen, setMenuOpen] = useState(false);
     const [openDropdown, setOpenDropdown] = useState(null);
+    const [products, setProducts] = useState([]);
+    const [brands, setBrands] = useState([]);
     const location = useLocation();
 
     useEffect(() => {
@@ -26,13 +15,19 @@ function Header() {
         return () => window.removeEventListener('scroll', onScroll);
     }, []);
 
+    // Fetch nav items from API
+    useEffect(() => {
+        fetch('/api/products').then(r => r.json()).then(setProducts).catch(() => { });
+        fetch('/api/brands').then(r => r.json()).then(setBrands).catch(() => { });
+    }, []);
+
     // Close mobile menu on route change
     useEffect(() => {
         setMenuOpen(false);
         setOpenDropdown(null);
     }, [location]);
 
-    const isActive = (path) => location.pathname === path;
+    const isActive = (path) => location.pathname.startsWith(path);
 
     const handleDropdownToggle = (name, e) => {
         if (window.innerWidth <= 768) {
@@ -53,15 +48,15 @@ function Header() {
                 <div className={`nav-overlay${menuOpen ? ' open' : ''}`} onClick={() => setMenuOpen(false)}></div>
                 <nav className={`nav${menuOpen ? ' open' : ''}`}>
                     <ul className="nav-list">
-                        <li className={isActive('/') ? 'active' : ''}><Link to="/">Home</Link></li>
-                        <li className={isActive('/about') ? 'active' : ''}><Link to="/about">About Us</Link></li>
+                        <li className={location.pathname === '/' ? 'active' : ''}><Link to="/">Home</Link></li>
+                        <li className={location.pathname === '/about' ? 'active' : ''}><Link to="/about">About Us</Link></li>
                         <li className={isActive('/product') ? 'active' : ''}>
                             <a href="#" onClick={(e) => handleDropdownToggle('products', e)}>
                                 Products <i className="fas fa-chevron-down"></i>
                             </a>
                             <ul className={`dropdown${openDropdown === 'products' ? ' open' : ''}`}>
-                                {productItems.map(item => (
-                                    <li key={item}><Link to="/product">{item}</Link></li>
+                                {products.map(item => (
+                                    <li key={item.slug}><Link to={`/product/${item.slug}`}>{item.name}</Link></li>
                                 ))}
                             </ul>
                         </li>
@@ -70,12 +65,12 @@ function Header() {
                                 Brands <i className="fas fa-chevron-down"></i>
                             </a>
                             <ul className={`dropdown${openDropdown === 'brands' ? ' open' : ''}`}>
-                                {brandItems.map(item => (
-                                    <li key={item}><Link to="/brand">{item}</Link></li>
+                                {brands.map(item => (
+                                    <li key={item.slug}><Link to={`/brand/${item.slug}`}>{item.name}</Link></li>
                                 ))}
                             </ul>
                         </li>
-                        <li className={isActive('/contact') ? 'active' : ''}><Link to="/contact">Contact Us</Link></li>
+                        <li className={location.pathname === '/contact' ? 'active' : ''}><Link to="/contact">Contact Us</Link></li>
                     </ul>
                 </nav>
             </div>
