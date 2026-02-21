@@ -45,7 +45,7 @@ function Header() {
         <header className={`header${scrolled ? ' scrolled' : ''}`}>
             <div className="container">
                 <Link to="/" className="logo">
-                    <span className="it">IT</span><span className="world">WORLD</span>
+                    <span className="gearnix-logo">Gearnix</span>
                 </Link>
                 <button className="menu-toggle" aria-label="Toggle Menu" onClick={() => setMenuOpen(!menuOpen)}>
                     <i className="fas fa-bars"></i>

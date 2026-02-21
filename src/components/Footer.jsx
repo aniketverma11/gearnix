@@ -8,9 +8,9 @@ function Footer() {
                 <div className="footer-grid">
                     <div className="footer-col footer-about">
                         <Link to="/" className="logo">
-                            <span className="it">IT</span><span className="world" style={{ color: '#fff' }}>WORLD</span>
+                            <span className="gearnix-logo" style={{ color: '#fff' }}>Gearnix</span>
                         </Link>
-                        <p>ITWorld Trading LLC is a UAE Based Wholesale Supplier which offers quality and reliable solutions in the areas of Computer Hardware, CCTV Systems, Networking Devices, Security Devices, IP Telephony, etc. We are committed to continuously enhance, improve and exceed expectations.</p>
+                        <p>Gearnix Trading LLC is a UAE Based Wholesale Supplier which offers quality and reliable solutions in the areas of Computer Hardware, CCTV Systems, Networking Devices, Security Devices, IP Telephony, etc. We are committed to continuously enhance, improve and exceed expectations.</p>
                     </div>
                     <div className="footer-col">
                         <h4>Company</h4>
@@ -28,7 +28,7 @@ function Footer() {
                         </div>
                         <div className="footer-contact-item">
                             <i className="fas fa-envelope"></i>
-                            <a href="mailto:info@itworlduae.com">info@itworlduae.com</a>
+                            <a href="mailto:info@gearnix.com">info@gearnix.com</a>
                         </div>
                     </div>
                     <div className="footer-col">
@@ -52,7 +52,7 @@ function Footer() {
             </div>
             <div className="footer-bottom">
                 <div className="container">
-                    &copy; 2026 IT WORLD TRADING LLC. ALL RIGHTS RESERVED
+                    &copy; 2026 GEARNIX TRADING LLC. ALL RIGHTS RESERVED
                 </div>
             </div>
         </footer>

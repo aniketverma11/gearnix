@@ -37,7 +37,7 @@ function ContactPage() {
                 <div className="contact-card">
                     <div className="icon-circle"><i className="fas fa-envelope"></i></div>
                     <h4>EMAIL</h4>
-                    <a href="mailto:info@itworlduae.com">info@itworlduae.com</a>
+                    <a href="mailto:info@gearnix.com">info@gearnix.com</a>
                 </div>
             </div>
 

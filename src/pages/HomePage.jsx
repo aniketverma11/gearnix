@@ -125,8 +125,8 @@ function HomePage() {
                 <div className="container">
                     <div className="about-preview-text">
                         <p className="label">EXPERIENCED DEALER</p>
-                        <h2>ITWorld Trading LLC</h2>
-                        <p>ITWorld Trading LLC is a UAE Based Wholesale Supplier which offers quality and reliable solutions in the areas of Computer Hardware, CCTV Systems, Networking Devices, Security Devices, IP Telephony, etc. We are the Trusted partner of all major brands like Cisco, Fortinet, SonicWALL, Ubiquiti, Aruba, Linksys, Dlink, TP Link, Belden, ExTell USA, Schneider, 3M/Corning, Panduit, Optema, Norden, Dconnect, Molex, Kuwes, Techlogiks Canada, Toten, APC, Eaton etc. We offer the widest range of premium wires and cables for various residential, commercial, industrial and infrastructure purposes.</p>
+                        <h2>Gearnix Trading LLC</h2>
+                        <p>Gearnix Trading LLC is a UAE Based Wholesale Supplier which offers quality and reliable solutions in the areas of Computer Hardware, CCTV Systems, Networking Devices, Security Devices, IP Telephony, etc. We are the Trusted partner of all major brands like Cisco, Fortinet, SonicWALL, Ubiquiti, Aruba, Linksys, Dlink, TP Link, Belden, ExTell USA, Schneider, 3M/Corning, Panduit, Optema, Norden, Dconnect, Molex, Kuwes, Techlogiks Canada, Toten, APC, Eaton etc. We offer the widest range of premium wires and cables for various residential, commercial, industrial and infrastructure purposes.</p>
                         <Link to="/about" className="btn-primary">READ MORE</Link>
                     </div>
                     <div className="about-preview-image">
@@ -164,7 +164,7 @@ function HomePage() {
                     <div className="section-title">
                         <p className="subtitle">We're Good At</p>
                         <h2>Our Services</h2>
-                        <p>ITWorld Trading LLC is Truly multi-purpose &amp; outstanding performance with Many Features.</p>
+                        <p>Gearnix Trading LLC is Truly multi-purpose &amp; outstanding performance with Many Features.</p>
                     </div>
                     <div className="services-grid">
                         <div className="service-card">
